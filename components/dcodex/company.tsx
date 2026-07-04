@@ -4,6 +4,7 @@ import {
   BadgeCheck,
   Building2,
   CalendarCheck,
+  CheckCircle2,
   FileCheck2,
   Globe2,
   Landmark,
@@ -17,25 +18,25 @@ const companyHighlights = [
     icon: Building2,
     label: "Company",
     title: "DCodex Ltd",
-    desc: "Pháp nhân được giới thiệu trong hồ sơ công ty, định hướng phát triển hệ sinh thái tài chính ứng dụng AI và on-chain.",
+    desc: "Pháp nhân vận hành hệ sinh thái DCodex, tập trung vào AI, on-chain và các giải pháp tài chính số.",
   },
   {
     icon: Landmark,
     label: "Jurisdiction",
     title: "California, USA",
-    desc: "Hồ sơ giới thiệu thể hiện DCodex Ltd được đăng ký tại bang California, Hoa Kỳ.",
+    desc: "Đăng ký tại California, Hoa Kỳ theo tài liệu công ty.",
   },
   {
     icon: ShieldCheck,
     label: "Registered Capital",
     title: "10,000,000 USD",
-    desc: "Vốn đăng ký được trình bày trong tài liệu công ty. Thông tin này nên được đối chiếu khi đánh giá.",
+    desc: "Thông tin vốn đăng ký được trình bày trong tài liệu công bố của DCodex.",
   },
   {
     icon: FileCheck2,
     label: "Compliance",
     title: "FinCEN MSB",
-    desc: "Tài liệu giới thiệu thể hiện thông tin đăng ký MSB với FinCEN Hoa Kỳ.",
+    desc: "Thông tin đăng ký MSB với FinCEN Hoa Kỳ.",
   },
 ]
 
@@ -44,7 +45,7 @@ const leaders = [
     role: "CEO DCodex",
     name: "Robert Reichenbach Richard",
     image: "/leaders/robert-reichenbach-richard.jpg",
-    desc: "Được giới thiệu với nền tảng trong tài chính định lượng, quản lý rủi ro, chiến lược phái sinh và thị trường tài chính quốc tế.",
+    desc: "Phụ trách định hướng chiến lược, tài chính định lượng, quản lý rủi ro và phát triển hệ sinh thái DCodex.",
     points: [
       "Tài chính định lượng",
       "Quản lý rủi ro",
@@ -55,7 +56,7 @@ const leaders = [
     role: "COO DCodex",
     name: "Dr. Udesh Chaskar",
     image: "/leaders/dr-udesh-chaskar.jpg",
-    desc: "Được giới thiệu với kinh nghiệm trong quản trị tổ chức, vận hành, hợp tác xuyên biên giới và điều phối chiến lược.",
+    desc: "Phụ trách vận hành, quản trị tổ chức, hợp tác xuyên biên giới và triển khai chiến lược.",
     points: [
       "Vận hành tổ chức",
       "Quản trị & cố vấn",
@@ -64,21 +65,21 @@ const leaders = [
   },
 ]
 
-const legalItems = [
+const legalChecklist = [
   {
     icon: Building2,
-    title: "Pháp nhân doanh nghiệp",
-    desc: "DCodex Ltd được trình bày là công ty đăng ký tại California, Hoa Kỳ, với cơ cấu doanh nghiệp được giới thiệu trong hồ sơ.",
+    title: "Đối chiếu pháp nhân",
+    desc: "Kiểm tra tên công ty, khu vực đăng ký, địa chỉ và tình trạng hồ sơ doanh nghiệp.",
   },
   {
     icon: FileCheck2,
-    title: "MSB Registration",
-    desc: "Hồ sơ thể hiện MSB Registration Number: 31000310586622, ngày đăng ký 09/18/2025.",
+    title: "Đối chiếu MSB",
+    desc: "Kiểm tra số đăng ký MSB, ngày đăng ký và thông tin liên quan trên nguồn công khai.",
   },
   {
     icon: ShieldCheck,
-    title: "Lưu ý kiểm chứng",
-    desc: "Đăng ký MSB không đồng nghĩa với bảo chứng lợi nhuận, bảo lãnh đầu tư hoặc cam kết an toàn tuyệt đối.",
+    title: "Hiểu đúng vai trò pháp lý",
+    desc: "Pháp lý là một lớp đánh giá nền tảng, không phải cam kết lợi nhuận hay bảo đảm an toàn tuyệt đối.",
   },
 ]
 
@@ -86,17 +87,17 @@ const timeline = [
   {
     time: "09/2025",
     title: "Hồ sơ pháp nhân",
-    desc: "Tài liệu công ty thể hiện cấu trúc pháp nhân DCodex Ltd tại California, Hoa Kỳ.",
+    desc: "Cấu trúc pháp nhân DCodex Ltd tại California, Hoa Kỳ.",
   },
   {
     time: "09/2025",
     title: "Thông tin MSB",
-    desc: "Hồ sơ giới thiệu thể hiện thông tin đăng ký MSB với FinCEN Hoa Kỳ.",
+    desc: "Thông tin đăng ký MSB với FinCEN Hoa Kỳ.",
   },
   {
     time: "2026",
     title: "Tài liệu thị trường Việt Nam",
-    desc: "Bộ tài liệu tiếng Việt được xây dựng để giới thiệu hệ sinh thái, công nghệ và thông tin nền tảng.",
+    desc: "Bộ tài liệu tiếng Việt giới thiệu hệ sinh thái, công nghệ và thông tin nền tảng.",
   },
   {
     time: "Next",
@@ -132,7 +133,8 @@ export function Company() {
 
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
             Với DCodex, nhà đầu tư không chỉ nên nhìn vào sản phẩm hay lợi nhuận.
-            Điều quan trọng hơn là pháp nhân, đội ngũ, hồ sơ hoạt động và khả năng kiểm chứng thông tin.
+            Điều quan trọng hơn là pháp nhân, đội ngũ điều hành, hồ sơ hoạt động
+            và dữ liệu có thể kiểm chứng.
           </p>
         </Reveal>
 
@@ -157,7 +159,7 @@ export function Company() {
                 </p>
 
                 <h3 className="font-serif text-2xl font-bold">
-                  Đội ngũ được giới thiệu trong hồ sơ DCodex
+                  Đội ngũ điều hành DCodex
                 </h3>
               </div>
             </div>
@@ -167,12 +169,12 @@ export function Company() {
                 <Reveal key={leader.name} delay={index * 100}>
                   <div className="h-full rounded-3xl border border-border bg-background/60 p-5 transition-all hover:-translate-y-1 sm:p-6">
                     <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-                      <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-primary/30 bg-secondary shadow-[0_0_34px_rgba(255,122,0,0.16)]">
+                      <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-2xl border border-primary/30 bg-secondary shadow-[0_0_34px_rgba(255,122,0,0.16)]">
                         <Image
                           src={leader.image}
                           alt={leader.name}
                           fill
-                          sizes="112px"
+                          sizes="128px"
                           className="object-cover"
                         />
                       </div>
@@ -203,11 +205,6 @@ export function Company() {
                         </div>
                       ))}
                     </div>
-
-                    <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
-                      Thông tin leadership được trình bày theo hồ sơ giới thiệu DCodex.
-                      Người xem nên tiếp tục đối chiếu thêm từ các nguồn chính thức khi đánh giá.
-                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -224,19 +221,25 @@ export function Company() {
                 </span>
 
                 <h3 className="mt-3 font-serif text-2xl font-bold sm:text-3xl">
-                  Pháp lý không phải để khoe.
-                  <br />
-                  Pháp lý là thứ cần kiểm chứng.
+                  Thông tin pháp lý là nền tảng để đối chiếu.
                 </h3>
 
                 <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Website này không yêu cầu người xem tin ngay. Các thông tin pháp nhân,
-                  đăng ký và hồ sơ doanh nghiệp nên được xem như điểm bắt đầu để tự đối chiếu.
+                  Các thông tin về pháp nhân, khu vực đăng ký và MSB giúp người xem
+                  có cơ sở ban đầu để đánh giá nền tảng trước khi tìm hiểu sâu hơn.
                 </p>
+
+                <div className="mt-6 rounded-2xl border border-border bg-background/60 p-5">
+                  <CheckCircle2 className="h-6 w-6 text-primary" />
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    Mục tiêu không phải là tin ngay, mà là có đủ dữ liệu để kiểm tra,
+                    đối chiếu và đưa ra quyết định độc lập.
+                  </p>
+                </div>
               </div>
 
               <div className="grid gap-4">
-                {legalItems.map((item) => (
+                {legalChecklist.map((item) => (
                   <div
                     key={item.title}
                     className="rounded-2xl border border-border bg-card/80 p-5"
