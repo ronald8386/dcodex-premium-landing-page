@@ -7,27 +7,27 @@ import { Reveal } from "./reveal"
 const faqs = [
   {
     q: "DCodex có phải là một kèo đầu tư lợi nhuận cao không?",
-    a: "Không nên nhìn DCodex theo cách đó. Website này định vị DCodex như một hệ sinh thái tài chính ứng dụng AI, CME, on-chain, arbitrage và DPay. Người dùng cần tìm hiểu mô hình, công cụ và dữ liệu trước khi ra quyết định.",
+    a: "Không nên. DCodex nên được nhìn như một hệ sinh thái tài chính ứng dụng AI, CME, on-chain, arbitrage và DPay. Người dùng cần hiểu mô hình, công cụ và dữ liệu trước khi quyết định.",
   },
   {
     q: "Điểm khác biệt chính của DCodex là gì?",
-    a: "Điểm cần chú ý là CME — mảnh ghép lõi trong quá trình thực thi. AI có thể hỗ trợ phân tích, on-chain hỗ trợ đối chiếu dữ liệu, còn CME là phần cần được tìm hiểu kỹ về cách vận hành.",
+    a: "Điểm cần chú ý là CME — lõi thực thi trong hệ sinh thái DCodex. AI hỗ trợ phân tích, on-chain hỗ trợ đối chiếu dữ liệu, còn CME là phần cần hiểu rõ về cách vận hành.",
   },
   {
     q: "On-chain có làm nền tảng an toàn tuyệt đối không?",
-    a: "Không. Minh bạch không loại bỏ rủi ro. Nhưng on-chain có thể giúp người dùng có thêm dữ liệu để đối chiếu, thay vì chỉ dựa vào lời giới thiệu hoặc hình ảnh dashboard.",
+    a: "Không. On-chain không loại bỏ rủi ro. Nhưng dữ liệu on-chain có thể giúp người dùng có thêm cơ sở để đối chiếu, thay vì chỉ dựa vào lời giới thiệu hoặc dashboard.",
   },
   {
     q: "Có nên chỉ nhìn vào lợi nhuận để quyết định không?",
-    a: "Không nên. Một nhà đầu tư tỉnh táo cần nhìn cả công ty, pháp lý, đội ngũ, công cụ, dữ liệu, cơ chế vận hành và rủi ro.",
+    a: "Không nên. Lợi nhuận chỉ là một phần của bức tranh. Nhà đầu tư cần xem cả công ty, công cụ, dữ liệu, cơ chế vận hành và rủi ro.",
   },
   {
     q: "Thông tin pháp lý có phải là bảo chứng lợi nhuận không?",
-    a: "Không. Pháp lý và hồ sơ doanh nghiệp là một phần để đánh giá nền tảng, nhưng không đồng nghĩa với cam kết lợi nhuận, bảo lãnh đầu tư hoặc an toàn tuyệt đối.",
+    a: "Không. Pháp lý là một lớp đánh giá nền tảng, không phải cam kết lợi nhuận, bảo lãnh đầu tư hoặc bảo đảm an toàn tuyệt đối.",
   },
   {
     q: "Người mới nên bắt đầu từ đâu?",
-    a: "Bắt đầu bằng 4 câu hỏi: công ty là ai, công cụ tạo giá trị là gì, dữ liệu nào có thể kiểm chứng, và rủi ro nằm ở đâu.",
+    a: "Bắt đầu từ 4 câu hỏi: công ty là ai, công cụ tạo giá trị là gì, dữ liệu nào có thể đối chiếu và rủi ro nằm ở đâu.",
   },
 ]
 
@@ -129,9 +129,11 @@ export function Faq() {
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             <div className="rounded-3xl border border-primary/30 bg-primary/5 p-6">
               <SearchCheck className="h-7 w-7 text-primary" />
+
               <h3 className="mt-4 font-serif text-xl font-semibold">
                 Nguyên tắc số 1
               </h3>
+
               <p className="mt-2 leading-relaxed text-muted-foreground">
                 Điều gì không thể kiểm chứng thì không nên tin quá nhanh.
               </p>
@@ -139,9 +141,11 @@ export function Faq() {
 
             <div className="rounded-3xl border border-border bg-card p-6">
               <ShieldCheck className="h-7 w-7 text-primary" />
+
               <h3 className="mt-4 font-serif text-xl font-semibold">
                 Nguyên tắc số 2
               </h3>
+
               <p className="mt-2 leading-relaxed text-muted-foreground">
                 Minh bạch không làm nhà đầu tư liều hơn. Minh bạch giúp nhà đầu tư tỉnh hơn.
               </p>
