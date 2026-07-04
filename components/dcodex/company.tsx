@@ -1,4 +1,5 @@
 import type { ElementType } from "react"
+import Image from "next/image"
 import {
   BadgeCheck,
   Building2,
@@ -7,7 +8,6 @@ import {
   Globe2,
   Landmark,
   ShieldCheck,
-  UserRound,
   UsersRound,
 } from "lucide-react"
 import { Reveal } from "./reveal"
@@ -43,6 +43,7 @@ const leaders = [
   {
     role: "CEO DCodex",
     name: "Robert Reichenbach Richard",
+    image: "/leaders/robert-reichenbach-richard.jpg",
     desc: "Được giới thiệu với nền tảng trong tài chính định lượng, quản lý rủi ro, chiến lược phái sinh và thị trường tài chính quốc tế.",
     points: [
       "Tài chính định lượng",
@@ -53,6 +54,7 @@ const leaders = [
   {
     role: "COO DCodex",
     name: "Dr. Udesh Chaskar",
+    image: "/leaders/dr-udesh-chaskar.jpg",
     desc: "Được giới thiệu với kinh nghiệm trong quản trị tổ chức, vận hành, hợp tác xuyên biên giới và điều phối chiến lược.",
     points: [
       "Vận hành tổ chức",
@@ -107,10 +109,12 @@ export function Company() {
   return (
     <section id="company" className="relative overflow-hidden py-20 sm:py-28">
       <div className="dc-grid-bg absolute inset-0 opacity-20" aria-hidden />
+
       <div
         className="absolute left-[-160px] top-20 h-[420px] w-[420px] rounded-full bg-primary/10 blur-[110px]"
         aria-hidden
       />
+
       <div
         className="absolute right-[-160px] bottom-10 h-[420px] w-[420px] rounded-full bg-accent/10 blur-[110px]"
         aria-hidden
@@ -140,43 +144,76 @@ export function Company() {
           ))}
         </div>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-2">
-          {leaders.map((leader, index) => (
-            <Reveal key={leader.name} delay={index * 100}>
-              <div className="h-full rounded-3xl border border-border bg-card/80 p-6 backdrop-blur-xl sm:p-8">
-                <div className="flex items-start gap-5">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/15 text-primary">
-                    <UserRound className="h-7 w-7" />
-                  </div>
-
-                  <div>
-                    <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-                      {leader.role}
-                    </p>
-                    <h3 className="mt-2 font-serif text-2xl font-bold">
-                      {leader.name}
-                    </h3>
-                    <p className="mt-3 leading-relaxed text-muted-foreground">
-                      {leader.desc}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                  {leader.points.map((point) => (
-                    <div
-                      key={point}
-                      className="rounded-2xl border border-border bg-secondary/35 px-4 py-3 text-sm text-muted-foreground"
-                    >
-                      <BadgeCheck className="mb-2 h-4 w-4 text-primary" />
-                      {point}
-                    </div>
-                  ))}
-                </div>
+        <Reveal delay={120}>
+          <div className="mt-16 rounded-3xl border border-border bg-card/80 p-6 backdrop-blur-xl sm:p-8">
+            <div className="mb-8 flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary">
+                <UsersRound className="h-6 w-6" />
               </div>
-            </Reveal>
-          ))}
-        </div>
+
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+                  Leadership
+                </p>
+
+                <h3 className="font-serif text-2xl font-bold">
+                  Đội ngũ được giới thiệu trong hồ sơ DCodex
+                </h3>
+              </div>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              {leaders.map((leader, index) => (
+                <Reveal key={leader.name} delay={index * 100}>
+                  <div className="h-full rounded-3xl border border-border bg-background/60 p-5 transition-all hover:-translate-y-1 sm:p-6">
+                    <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+                      <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-primary/30 bg-secondary shadow-[0_0_34px_rgba(255,122,0,0.16)]">
+                        <Image
+                          src={leader.image}
+                          alt={leader.name}
+                          fill
+                          sizes="112px"
+                          className="object-cover"
+                        />
+                      </div>
+
+                      <div className="min-w-0">
+                        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+                          {leader.role}
+                        </p>
+
+                        <h4 className="mt-2 font-serif text-2xl font-bold">
+                          {leader.name}
+                        </h4>
+
+                        <p className="mt-3 leading-relaxed text-muted-foreground">
+                          {leader.desc}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                      {leader.points.map((point) => (
+                        <div
+                          key={point}
+                          className="rounded-2xl border border-border bg-secondary/35 px-4 py-3 text-sm text-muted-foreground"
+                        >
+                          <BadgeCheck className="mb-2 h-4 w-4 text-primary" />
+                          {point}
+                        </div>
+                      ))}
+                    </div>
+
+                    <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
+                      Thông tin leadership được trình bày theo hồ sơ giới thiệu DCodex.
+                      Người xem nên tiếp tục đối chiếu thêm từ các nguồn chính thức khi đánh giá.
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </Reveal>
 
         <Reveal delay={160}>
           <div className="mt-16 rounded-3xl border border-primary/30 bg-primary/5 p-6 sm:p-8">
@@ -213,6 +250,7 @@ export function Company() {
                         <h4 className="font-serif text-lg font-semibold">
                           {item.title}
                         </h4>
+
                         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                           {item.desc}
                         </p>
@@ -231,10 +269,12 @@ export function Company() {
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary">
                 <CalendarCheck className="h-5 w-5" />
               </div>
+
               <div>
                 <p className="text-sm font-semibold uppercase tracking-widest text-primary">
                   Timeline
                 </p>
+
                 <h3 className="font-serif text-2xl font-bold">
                   Các mốc thông tin chính
                 </h3>
@@ -251,7 +291,9 @@ export function Company() {
                     {item.time}
                   </div>
 
-                  <h4 className="font-serif text-lg font-semibold">{item.title}</h4>
+                  <h4 className="font-serif text-lg font-semibold">
+                    {item.title}
+                  </h4>
 
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {item.desc}
@@ -269,6 +311,7 @@ export function Company() {
         <Reveal delay={240}>
           <div className="mx-auto mt-12 max-w-3xl rounded-3xl border border-border bg-card/70 p-6 text-center sm:p-8">
             <Globe2 className="mx-auto h-8 w-8 text-primary" />
+
             <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
               Một nhà đầu tư tỉnh táo không chỉ hỏi “lợi nhuận bao nhiêu?”.
               Họ hỏi: công ty là ai, đội ngũ vận hành thế nào, hồ sơ pháp lý ra sao
@@ -304,7 +347,9 @@ function InfoCard({
 
       <h3 className="mt-2 font-serif text-xl font-semibold">{title}</h3>
 
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{desc}</p>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+        {desc}
+      </p>
     </div>
   )
 }
