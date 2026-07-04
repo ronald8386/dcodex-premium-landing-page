@@ -16,7 +16,7 @@ const sora = Sora({
 })
 
 export const metadata: Metadata = {
-  title: 'DCodex — Nền tảng đầu tư crypto minh bạch',
+  title: 'DCodex — Hệ sinh thái tài chính AI, CME & On-chain',
   description:
     'DCodex là nền tảng đầu tư crypto minh bạch, kiểm toán độc lập và bảo mật tài sản. Được xây dựng cho nhà đầu tư đã từng gặp sàn lừa đảo và hệ thống AI giả mạo.',
   generator: 'v0.app',
