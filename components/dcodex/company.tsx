@@ -4,7 +4,6 @@ import {
   BadgeCheck,
   Building2,
   CalendarCheck,
-  CheckCircle2,
   FileCheck2,
   Globe2,
   Landmark,
@@ -13,30 +12,30 @@ import {
 } from "lucide-react"
 import { Reveal } from "./reveal"
 
-const companyHighlights = [
+const companyFacts = [
   {
     icon: Building2,
     label: "Company",
-    title: "DCodex Ltd",
-    desc: "Pháp nhân vận hành hệ sinh thái DCodex, tập trung vào AI, on-chain và các giải pháp tài chính số.",
+    value: "DCodex Ltd",
+    desc: "Pháp nhân vận hành hệ sinh thái DCodex.",
   },
   {
     icon: Landmark,
     label: "Jurisdiction",
-    title: "California, USA",
-    desc: "Đăng ký tại California, Hoa Kỳ theo tài liệu công ty.",
+    value: "California, USA",
+    desc: "Khu vực đăng ký doanh nghiệp.",
   },
   {
     icon: ShieldCheck,
     label: "Registered Capital",
-    title: "10,000,000 USD",
-    desc: "Thông tin vốn đăng ký được trình bày trong tài liệu công bố của DCodex.",
+    value: "10,000,000 USD",
+    desc: "Vốn đăng ký trong tài liệu công bố.",
   },
   {
     icon: FileCheck2,
-    label: "Compliance",
-    title: "FinCEN MSB",
-    desc: "Thông tin đăng ký MSB với FinCEN Hoa Kỳ.",
+    label: "FinCEN MSB",
+    value: "31000310586622",
+    desc: "Registration Date: 09/18/2025.",
   },
 ]
 
@@ -65,34 +64,11 @@ const leaders = [
   },
 ]
 
-const legalChecklist = [
-  {
-    icon: Building2,
-    title: "Đối chiếu pháp nhân",
-    desc: "Kiểm tra tên công ty, khu vực đăng ký, địa chỉ và tình trạng hồ sơ doanh nghiệp.",
-  },
-  {
-    icon: FileCheck2,
-    title: "Đối chiếu MSB",
-    desc: "Kiểm tra số đăng ký MSB, ngày đăng ký và thông tin liên quan trên nguồn công khai.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Hiểu đúng vai trò pháp lý",
-    desc: "Pháp lý là một lớp đánh giá nền tảng, không phải cam kết lợi nhuận hay bảo đảm an toàn tuyệt đối.",
-  },
-]
-
 const timeline = [
   {
     time: "09/2025",
     title: "Hồ sơ pháp nhân",
-    desc: "Cấu trúc pháp nhân DCodex Ltd tại California, Hoa Kỳ.",
-  },
-  {
-    time: "09/2025",
-    title: "Thông tin MSB",
-    desc: "Thông tin đăng ký MSB với FinCEN Hoa Kỳ.",
+    desc: "DCodex Ltd được thể hiện là pháp nhân tại California, Hoa Kỳ.",
   },
   {
     time: "2026",
@@ -138,15 +114,56 @@ export function Company() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {companyHighlights.map((item, index) => (
-            <Reveal key={item.title} delay={(index % 4) * 70}>
-              <InfoCard {...item} />
-            </Reveal>
-          ))}
-        </div>
+        <Reveal delay={100}>
+          <div className="mt-14 rounded-3xl border border-primary/30 bg-primary/5 p-6 backdrop-blur-xl sm:p-8">
+            <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+              <div>
+                <span className="text-sm font-semibold uppercase tracking-widest text-primary">
+                  Company & Legal Snapshot
+                </span>
 
-        <Reveal delay={120}>
+                <h3 className="mt-3 font-serif text-2xl font-bold sm:text-3xl">
+                  Thông tin nền tảng để đánh giá DCodex.
+                </h3>
+
+                <p className="mt-4 leading-relaxed text-muted-foreground">
+                  Các thông tin về pháp nhân, khu vực đăng ký, vốn đăng ký và MSB
+                  giúp người xem có cơ sở ban đầu để đánh giá nền tảng trước khi
+                  tìm hiểu sâu hơn.
+                </p>
+
+                <div className="mt-6 rounded-2xl border border-border bg-background/60 p-5">
+                  <div className="flex gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary">
+                      <ShieldCheck className="h-5 w-5" />
+                    </div>
+
+                    <div>
+                      <h4 className="font-serif text-lg font-semibold">
+                        Hiểu đúng vai trò pháp lý
+                      </h4>
+
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        Pháp lý là một lớp đánh giá nền tảng, không phải cam kết
+                        lợi nhuận hay bảo đảm an toàn tuyệt đối.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-3xl border border-border bg-card/80 p-5 sm:p-6">
+                <div className="grid gap-4">
+                  {companyFacts.map((item) => (
+                    <FactRow key={item.label} {...item} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={140}>
           <div className="mt-16 rounded-3xl border border-border bg-card/80 p-6 backdrop-blur-xl sm:p-8">
             <div className="mb-8 flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary">
@@ -212,60 +229,6 @@ export function Company() {
           </div>
         </Reveal>
 
-        <Reveal delay={160}>
-          <div className="mt-16 rounded-3xl border border-primary/30 bg-primary/5 p-6 sm:p-8">
-            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-              <div>
-                <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-                  Legal Verification
-                </span>
-
-                <h3 className="mt-3 font-serif text-2xl font-bold sm:text-3xl">
-                  Thông tin pháp lý là nền tảng để đối chiếu.
-                </h3>
-
-                <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Các thông tin về pháp nhân, khu vực đăng ký và MSB giúp người xem
-                  có cơ sở ban đầu để đánh giá nền tảng trước khi tìm hiểu sâu hơn.
-                </p>
-
-                <div className="mt-6 rounded-2xl border border-border bg-background/60 p-5">
-                  <CheckCircle2 className="h-6 w-6 text-primary" />
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    Mục tiêu không phải là tin ngay, mà là có đủ dữ liệu để kiểm tra,
-                    đối chiếu và đưa ra quyết định độc lập.
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid gap-4">
-                {legalChecklist.map((item) => (
-                  <div
-                    key={item.title}
-                    className="rounded-2xl border border-border bg-card/80 p-5"
-                  >
-                    <div className="flex gap-4">
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary">
-                        <item.icon className="h-5 w-5" />
-                      </div>
-
-                      <div>
-                        <h4 className="font-serif text-lg font-semibold">
-                          {item.title}
-                        </h4>
-
-                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Reveal>
-
         <Reveal delay={200}>
           <div className="mt-16">
             <div className="mb-8 flex items-center gap-3">
@@ -284,7 +247,7 @@ export function Company() {
               </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-4">
+            <div className="grid gap-4 md:grid-cols-3">
               {timeline.map((item, index) => (
                 <div
                   key={item.title}
@@ -327,32 +290,34 @@ export function Company() {
   )
 }
 
-function InfoCard({
+function FactRow({
   icon: Icon,
   label,
-  title,
+  value,
   desc,
 }: {
   icon: ElementType
   label: string
-  title: string
+  value: string
   desc: string
 }) {
   return (
-    <div className="group h-full rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-1">
-      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+    <div className="flex gap-4 rounded-2xl border border-border bg-background/60 p-4">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary">
         <Icon className="h-5 w-5" />
       </div>
 
-      <p className="mt-5 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-        {label}
-      </p>
+      <div className="min-w-0">
+        <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          {label}
+        </p>
 
-      <h3 className="mt-2 font-serif text-xl font-semibold">{title}</h3>
+        <h4 className="mt-1 font-serif text-xl font-semibold">{value}</h4>
 
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-        {desc}
-      </p>
+        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+          {desc}
+        </p>
+      </div>
     </div>
   )
 }
