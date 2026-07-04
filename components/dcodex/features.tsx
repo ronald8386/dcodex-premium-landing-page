@@ -18,7 +18,7 @@ const ecosystemCards = [
   {
     icon: Wrench,
     title: "CME",
-    desc: "Mảnh ghép trung tâm của DCodex. Đây là phần cần được tìm hiểu kỹ: công cụ vận hành thế nào, thực thi ra sao và có thể đánh giá bằng dữ liệu gì.",
+    desc: "Mảnh ghép trung tâm của DCodex. Nơi cần được hiểu rõ về cách vận hành: logic giao dịch và dữ liệu đánh giá.",
     highlight: true,
   },
   {
@@ -65,8 +65,8 @@ export function Features() {
           </h2>
 
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-            DCodex nên được nhìn như một hệ sinh thái AI + CME + on-chain + arbitrage + DPay,
-            trong đó CME là lõi thực thi cần được nhà đầu tư tìm hiểu và kiểm chứng.
+            DCodex là hệ sinh thái kết hợp AI + CME + on-chain + arbitrage và DPay,
+            trong đó CME đóng vai trò là lõi thực thi.
           </p>
         </Reveal>
 
