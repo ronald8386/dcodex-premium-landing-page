@@ -66,19 +66,24 @@ const leaders = [
 
 const timeline = [
   {
-    time: "09/2025",
-    title: "Hồ sơ pháp nhân",
-    desc: "DCodex Ltd được thể hiện là pháp nhân tại California, Hoa Kỳ.",
+    time: "Giai đoạn 1",
+    title: "CME & Lõi thực thi",
+    desc: "Xây dựng công cụ thực thi trung tâm của hệ sinh thái.",
   },
   {
-    time: "2026",
-    title: "Tài liệu thị trường Việt Nam",
-    desc: "Bộ tài liệu tiếng Việt giới thiệu hệ sinh thái, công nghệ và thông tin nền tảng.",
+    time: "Giai đoạn 2",
+    title: "Ví & Hệ sinh thái người dùng",
+    desc: "Mở rộng trải nghiệm lưu trữ, sử dụng và kết nối tài sản số.",
   },
   {
-    time: "Next",
-    title: "Mở rộng hệ sinh thái",
-    desc: "Tập trung vào AI, CME, on-chain, arbitrage và DPay như các mảnh ghép vận hành cùng nhau.",
+    time: "Giai đoạn 3",
+    title: "DPay",
+    desc: "Kết nối thanh toán, chi tiêu và chuyển đổi giá trị.",
+  },
+  {
+    time: "Giai đoạn 4",
+    title: "Hạ tầng thanh toán",
+    desc: "Mở rộng hệ sinh thái ứng dụng và kết nối thương mại.",
   },
 ]
 
@@ -238,16 +243,16 @@ export function Company() {
 
               <div>
                 <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-                  Timeline
+                  Lộ trình phát triển hệ sinh thái
                 </p>
 
                 <h3 className="font-serif text-2xl font-bold">
-                  Các mốc thông tin chính
+                  Từ lõi thực thi đến hạ tầng tài chính số
                 </h3>
               </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-4">
               {timeline.map((item, index) => (
                 <div
                   key={item.title}
@@ -279,9 +284,9 @@ export function Company() {
             <Globe2 className="mx-auto h-8 w-8 text-primary" />
 
             <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-              Một nhà đầu tư tỉnh táo không chỉ hỏi “lợi nhuận bao nhiêu?”.
-              Họ hỏi: công ty là ai, đội ngũ vận hành thế nào, hồ sơ pháp lý ra sao
-              và thông tin đó có đủ cơ sở để đánh giá không.
+              Từng bước mở rộng từ công cụ thực thi đến hạ tầng tài chính số.
+              DCodex nên được đánh giá như một hệ sinh thái đang hoàn thiện,
+              không chỉ như một sản phẩm đơn lẻ.
             </p>
           </div>
         </Reveal>
