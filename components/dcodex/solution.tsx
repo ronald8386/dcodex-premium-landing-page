@@ -46,9 +46,7 @@ export function Solution() {
             </h2>
 
             <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-              Lợi nhuận là kết quả. Điều nên được tìm hiểu trước là: ai xây dựng,
-              công cụ hoạt động thế nào, dữ liệu có thể kiểm chứng không và giá trị
-              được tạo ra bằng cách nào.
+              Lợi nhuận là kết quả. Trước đó, nhà đầu tư cần hiểu ai xây dựng, công cụ vận hành ra sao, dữ liệu có thể đối chiếu không và giá trị được tạo ra bằng cách nào.
             </p>
 
             <div className="mt-8 rounded-2xl border border-border bg-card p-6">

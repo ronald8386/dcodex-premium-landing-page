@@ -49,25 +49,29 @@ export function Cta() {
 
             <p className="mx-auto mt-5 max-w-2xl text-pretty leading-relaxed text-muted-foreground sm:text-lg">
               Một quyết định tài chính tốt không bắt đầu từ cảm xúc.
-              Nó bắt đầu từ việc hiểu công ty, hiểu công cụ, hiểu dữ liệu
-              và hiểu rủi ro trước khi tham gia.
+              Nó bắt đầu từ việc hiểu công ty, công cụ, dữ liệu và rủi ro.
             </p>
 
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-              <a href="#" className="w-full sm:w-auto">
+              <a
+                href="https://t.me/dcodex_community"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
                 <Button size="lg" className="group w-full">
                   Tham gia cộng đồng DCodex
                   <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </a>
 
-              <a href="#" className="w-full sm:w-auto">
+              <a href="#company" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
                   className="w-full border-border bg-transparent"
                 >
-                  Đặt lịch trao đổi
+                  Kiểm tra thông tin nền tảng
                 </Button>
               </a>
             </div>

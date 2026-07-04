@@ -62,7 +62,7 @@ export function Pain() {
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
             Trong crypto, mất tiền không chỉ đến từ thị trường giảm. Nó còn đến từ việc
-            đặt niềm tin vào một hệ thống mà mình chưa đủ dữ liệu để kiểm chứng.
+            đặt niềm tin vào một hệ thống khi chưa đủ dữ liệu để kiểm chứng.
           </p>
         </Reveal>
 
