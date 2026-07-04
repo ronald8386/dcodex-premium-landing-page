@@ -339,3 +339,105 @@
   background-clip: text;
   color: transparent;
 }
+/* =========================================================
+   DCODEX PREMIUM UI LAYER
+   ========================================================= */
+
+section {
+  position: relative;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 122, 0, 0.05), transparent 28%),
+    radial-gradient(circle at 80% 60%, rgba(255, 159, 28, 0.035), transparent 30%);
+  opacity: 0.8;
+}
+
+button,
+[role="button"] {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+button:hover,
+[role="button"]:hover {
+  transform: translateY(-2px);
+}
+
+.bg-primary {
+  background: linear-gradient(135deg, #ff7a00, #ffb15c) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 122, 0, 0.28),
+    0 14px 42px rgba(255, 122, 0, 0.22);
+}
+
+.border-border.bg-card,
+.bg-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+    rgba(23, 23, 23, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.11) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 20px 60px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(18px);
+}
+
+.bg-card:hover {
+  border-color: rgba(255, 122, 0, 0.42) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 24px 70px rgba(255, 122, 0, 0.08),
+    0 18px 60px rgba(0, 0, 0, 0.35);
+}
+
+.text-primary {
+  color: #ff9f1c !important;
+}
+
+.text-accent {
+  color: #ffb15c !important;
+}
+
+.bg-primary\/10,
+.bg-primary\/15,
+.bg-accent\/10 {
+  background: rgba(255, 122, 0, 0.12) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 122, 0, 0.16);
+}
+
+.border-primary\/30 {
+  border-color: rgba(255, 122, 0, 0.34) !important;
+}
+
+.bg-primary\/5 {
+  background:
+    linear-gradient(135deg, rgba(255, 122, 0, 0.1), rgba(255, 159, 28, 0.035)) !important;
+}
+
+.rounded-3xl,
+.rounded-2xl {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 24px 80px rgba(0, 0, 0, 0.22);
+}
+
+.dc-grid-bg {
+  opacity: 0.65;
+}
+
+h1 span,
+h2 span {
+  background: linear-gradient(90deg, #ffffff, #ffb15c, #ff7a00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
