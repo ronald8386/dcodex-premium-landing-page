@@ -1,4 +1,7 @@
-import { HelpCircle, SearchCheck, ShieldCheck } from "lucide-react"
+"use client"
+
+import { useState } from "react"
+import { ChevronDown, HelpCircle, SearchCheck, ShieldCheck } from "lucide-react"
 import { Reveal } from "./reveal"
 
 const faqs = [
@@ -29,9 +32,16 @@ const faqs = [
 ]
 
 export function Faq() {
+  const [openIndex, setOpenIndex] = useState(0)
+
   return (
     <section id="faq" className="relative overflow-hidden py-20 sm:py-28">
       <div className="dc-grid-bg absolute inset-0 opacity-20" aria-hidden />
+
+      <div
+        className="absolute left-1/2 top-20 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]"
+        aria-hidden
+      />
 
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
         <Reveal className="mx-auto max-w-3xl text-center">
@@ -48,28 +58,71 @@ export function Faq() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-4">
-          {faqs.map((item, index) => (
-            <Reveal key={item.q} delay={(index % 3) * 70}>
-              <div className="rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1">
-                <div className="flex gap-4">
-                  <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary">
-                    <HelpCircle className="h-5 w-5" />
-                  </div>
+        <div className="mx-auto mt-12 max-w-4xl space-y-4">
+          {faqs.map((item, index) => {
+            const isOpen = openIndex === index
 
-                  <div>
-                    <h3 className="font-serif text-lg font-semibold">
+            return (
+              <Reveal key={item.q} delay={(index % 3) * 70}>
+                <div
+                  className={[
+                    "overflow-hidden rounded-2xl border transition-all duration-300",
+                    isOpen
+                      ? "border-primary/40 bg-primary/5"
+                      : "border-border bg-card hover:border-primary/30",
+                  ].join(" ")}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                    aria-expanded={isOpen}
+                    className="flex w-full items-center gap-4 p-5 text-left sm:p-6"
+                  >
+                    <div
+                      className={[
+                        "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors",
+                        isOpen
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-primary/15 text-primary",
+                      ].join(" ")}
+                    >
+                      <HelpCircle className="h-5 w-5" />
+                    </div>
+
+                    <h3 className="flex-1 font-serif text-base font-semibold leading-snug sm:text-lg">
                       {item.q}
                     </h3>
 
-                    <p className="mt-2 leading-relaxed text-muted-foreground">
-                      {item.a}
-                    </p>
+                    <ChevronDown
+                      className={[
+                        "h-5 w-5 shrink-0 text-primary transition-transform duration-300",
+                        isOpen ? "rotate-180" : "",
+                      ].join(" ")}
+                    />
+                  </button>
+
+                  <div
+                    className={[
+                      "grid transition-all duration-300 ease-out",
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0",
+                    ].join(" ")}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 pb-5 sm:px-6 sm:pb-6">
+                        <div className="ml-0 border-t border-border pt-4 sm:ml-[60px]">
+                          <p className="leading-relaxed text-muted-foreground">
+                            {item.a}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            )
+          })}
         </div>
 
         <Reveal delay={200}>
