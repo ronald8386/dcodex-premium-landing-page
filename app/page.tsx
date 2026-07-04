@@ -5,6 +5,7 @@ import { Solution } from "@/components/dcodex/solution"
 import { Features } from "@/components/dcodex/features"
 import { Comparison } from "@/components/dcodex/comparison"
 import { Transparency } from "@/components/dcodex/transparency"
+import { Company } from "@/components/dcodex/company"
 import { Faq } from "@/components/dcodex/faq"
 import { Cta } from "@/components/dcodex/cta"
 import { SiteFooter } from "@/components/dcodex/site-footer"
@@ -20,6 +21,7 @@ export default function Home() {
         <Features />
         <Comparison />
         <Transparency />
+        <Company />
         <Faq />
         <Cta />
       </main>
