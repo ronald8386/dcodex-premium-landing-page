@@ -81,7 +81,7 @@ export function Hero() {
             <Reveal delay={140}>
               <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground lg:mx-0">
                 Trong tài chính, lợi nhuận không nên là câu hỏi đầu tiên.
-                Điều quan trọng hơn là công cụ nào tạo ra kết quả, dữ liệu nào có thể đối chiếu,
+                Điều quan trọng hơn là công cụ nào tạo ra kết quả, dữ liệu nào có thể đối chiếu
                 và hệ sinh thái đó vận hành ra sao.
               </p>
             </Reveal>

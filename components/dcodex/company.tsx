@@ -110,7 +110,7 @@ export function Company() {
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
             Với DCodex, nhà đầu tư không chỉ nên nhìn vào sản phẩm hay lợi nhuận.
             Điều quan trọng hơn là pháp nhân, đội ngũ điều hành, hồ sơ hoạt động
-            và dữ liệu có thể kiểm chứng.
+            và dữ liệu có thể đối chiếu.
           </p>
         </Reveal>
 
@@ -281,7 +281,7 @@ export function Company() {
             <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
               Một nhà đầu tư tỉnh táo không chỉ hỏi “lợi nhuận bao nhiêu?”.
               Họ hỏi: công ty là ai, đội ngũ vận hành thế nào, hồ sơ pháp lý ra sao
-              và thông tin đó có thể kiểm chứng được không.
+              và thông tin đó có đủ cơ sở để đánh giá không.
             </p>
           </div>
         </Reveal>

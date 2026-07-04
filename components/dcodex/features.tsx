@@ -38,7 +38,7 @@ const ecosystemCards = [
   },
   {
     icon: Eye,
-    title: "Tư duy kiểm chứng",
+    title: "Tư duy đánh giá",
     desc: "Đừng tin DCodex chỉ vì website này. Hãy tự đặt câu hỏi, tự tìm hiểu và tự đánh giá trước khi ra quyết định.",
   },
 ]
@@ -155,7 +155,7 @@ export function Features() {
             <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
               Điểm đáng chú ý không phải là DCodex có nhiều công nghệ.
               Điểm đáng chú ý là các mảnh ghép này được đặt trong một hệ sinh thái
-              hướng đến khả năng kiểm chứng, thay vì chỉ yêu cầu người dùng tin vào lời hứa.
+              hướng đến dữ liệu có thể đối chiếu, thay vì chỉ yêu cầu người dùng tin vào lời hứa.
             </p>
           </div>
         </Reveal>
